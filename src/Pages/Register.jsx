@@ -20,7 +20,7 @@ import axios from "axios";
 function Register() {
   const [username , setUsername] = useState()
   const [password, setPassword] = useState()
-  const [role, setRole] = useState();
+  const [role, setRole] = useState("User");
   const [status , setStatus] = useState();
 
   
@@ -36,8 +36,8 @@ function Register() {
   
   const handleRole = (e) => {
     console.log(e.target.value);
-    setRole(e.target.value);
-  };
+  }
+
   const handleSubm = (e) => {
     e.preventDefault();
     axios.post('https://be-9.up.railway.app/auth/register', {
